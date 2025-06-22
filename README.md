@@ -17,6 +17,12 @@ Install dependencies:
 ```bash
 pip install requests pandas openpyxl
 ```
+
+or
+
+```bash
+pip install -r requirements.txt
+```
 Tkinter is included with most Python installations.
 
 ## Setup
