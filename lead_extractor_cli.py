@@ -24,7 +24,7 @@ HISTORY_FILE = 'search_history.json'
 OUTPUT_FOLDER = 'extracted_leads'
 
 def display_linkedin_logo():
-    # Displays a minimal "in" logo for LinkedIn-Lead-Extractor
+    # Displays a minimal "in" logo for LinkedIn-Lead-Extractor.
     logo = r"""
   _                                 _ _     
  (_)                               (_) |    

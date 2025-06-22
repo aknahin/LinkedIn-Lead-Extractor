@@ -69,4 +69,4 @@ Results are saved in the current directory as both `.xlsx` and `.csv` files.
 See `LICENSE` file.
 
 ## Author
-- AK Nahin — [aknahin.com](https://aknahin.com)
+- AK Nahin [aknahin.com](https://aknahin.com)

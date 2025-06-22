@@ -197,6 +197,6 @@ cython_debug/
 .linkedin_leads*
 extracted_leads*
 
-# Custom configuration files
+# Custom configuration files.
 google_search_config.json
 search_history.json
