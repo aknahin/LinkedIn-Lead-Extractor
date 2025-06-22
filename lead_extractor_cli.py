@@ -21,6 +21,21 @@ from datetime import datetime
 # --- Configuration ---
 CONFIG_FILE = 'google_search_config.json'
 HISTORY_FILE = 'search_history.json'
+OUTPUT_FOLDER = 'extracted_leads'
+
+def display_linkedin_logo():
+    # Displays a minimal "in" logo for LinkedIn-Lead-Extractor
+    logo = r"""
+  _                                 _ _     
+ (_)                               (_) |    
+  _ _ __ ______ ___ _ __ ___   __ _ _| |___ 
+ | | '_ \______/ _ \ '_ ` _ \ / _` | | / __|
+ | | | | |    |  __/ | | | | | (_| | | \__ \
+ |_|_| |_|     \___|_| |_| |_|\__,_|_|_|___/
+                                            
+                                            
+    """
+    print(logo)
 
 def load_or_create_config():
     """Loads API configuration from a file or prompts the user to create it."""
@@ -81,10 +96,17 @@ def save_history(entry):
     with open(HISTORY_FILE, 'w') as f:
         json.dump(history, f, indent=2)
 
+def ensure_output_folder():
+    """Creates the output folder if it doesn't exist"""
+    if not os.path.exists(OUTPUT_FOLDER):
+        os.makedirs(OUTPUT_FOLDER)
+
 def main():
     """Main function to run the command-line interface."""
+    display_linkedin_logo()
     config = load_or_create_config()
     api_key, cx = config["api_key"], config["cx"]
+    ensure_output_folder()
 
     print("--- LinkedIn Lead Extractor ---")
     title_input = input("Enter the title you're looking for (e.g. realtor): ").strip()
@@ -139,8 +161,8 @@ def main():
         base_filename = f"{title_input}_{area}_{timestamp}".replace(" ", "_")
 
         df = pd.DataFrame(collected)
-        excel_file = base_filename + ".xlsx"
-        csv_file = base_filename + ".csv"
+        excel_file = os.path.join(OUTPUT_FOLDER, base_filename + ".xlsx")
+        csv_file = os.path.join(OUTPUT_FOLDER, base_filename + ".csv")
         df.to_excel(excel_file, index=False)
         df.to_csv(csv_file, index=False)
 

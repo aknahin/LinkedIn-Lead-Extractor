@@ -192,3 +192,11 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Custom output/data files
+.linkedin_leads*
+extracted_leads*
+
+# Custom configuration files
+google_search_config.json
+search_history.json

@@ -1,4 +1,3 @@
 requests
 pandas
 openpyxl
-# Tkinter is included with most Python installations; no need to list it here

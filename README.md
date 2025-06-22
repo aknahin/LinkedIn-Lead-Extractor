@@ -3,7 +3,7 @@
 A tool to extract public contact information (emails, phone numbers, LinkedIn URLs) for professionals from Google search results, focusing on LinkedIn profiles. No scraping of LinkedIn itself is performed; all data is gathered from Google's search snippets.
 
 ## Features
-- **CLI and GUI**: Use either a command-line interface or a user-friendly graphical interface (Tkinter).
+- **Command-Line Interface (CLI)**: Simple and interactive terminal-based usage.
 - **Google Custom Search API**: Utilizes the official API for reliable results.
 - **Flexible Search**: Filter by job title, area/city, and email provider.
 - **Export**: Results are saved as both Excel (`.xlsx`) and CSV (`.csv`) files.
@@ -11,9 +11,19 @@ A tool to extract public contact information (emails, phone numbers, LinkedIn UR
 
 ## Requirements
 - Python 3.7+
-- Packages: `requests`, `pandas`, `openpyxl` (for Excel export), `tkinter` (for GUI)
+- Packages: `requests`, `pandas`, `openpyxl`
 
-Install dependencies:
+## Recommended: Use a Virtual Environment
+To avoid dependency conflicts, it is recommended to use a Python virtual environment:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+```
+
+## Install Dependencies
+Install required packages with:
+
 ```bash
 pip install requests pandas openpyxl
 ```
@@ -23,7 +33,6 @@ or
 ```bash
 pip install -r requirements.txt
 ```
-Tkinter is included with most Python installations.
 
 ## Setup
 1. **Google Custom Search API**
@@ -50,15 +59,6 @@ You will be prompted for:
 - Email provider (e.g., gmail.com)
 
 Results are saved in the current directory as both `.xlsx` and `.csv` files.
-
-### Graphical User Interface
-Run:
-```bash
-python lead_extractor_gui.py
-```
-- Fill in the fields and click "Start Extraction".
-- Progress and results are shown in the log area.
-- Files are saved in the current directory.
 
 ## Notes
 - **No LinkedIn scraping**: This tool does not violate LinkedIn's terms of service.
